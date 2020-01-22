@@ -1,4 +1,4 @@
-package com.example.demo.models;
+package com.kocati.form.app.models;
 
 import javax.persistence.*;
 import java.util.List;

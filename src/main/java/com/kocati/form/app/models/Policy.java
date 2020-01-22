@@ -1,6 +1,6 @@
-package com.example.demo.models;
+package com.kocati.form.app.models;
 
-import com.example.demo.models.enums.PolicyType;
+import com.kocati.form.app.models.enums.PolicyType;
 
 import javax.persistence.*;
 import java.util.Date;

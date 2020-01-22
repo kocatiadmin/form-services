@@ -1,4 +1,4 @@
-package com.example.demo.models;
+package com.kocati.form.app.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,7 +1,7 @@
-package com.example.demo.controllers;
+package com.kocati.form.app.controllers;
 
-import com.example.demo.models.Client;
-import com.example.demo.repositories.ClientRepo;
+import com.kocati.form.app.models.Client;
+import com.kocati.form.app.repositories.ClientRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;

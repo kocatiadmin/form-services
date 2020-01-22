@@ -1,4 +1,4 @@
-package com.example.demo.models.enums;
+package com.kocati.form.app.models.enums;
 
 public enum PolicyType {
     MEDICAL, SELF_FUNDED, DENTAL, VISION, BASIC_LIFE_AND_AD, SHORT_TERM_DISABILITY, LONG_TERM_DISABILITY,

@@ -1,9 +1,7 @@
-package com.example.demo.models;
+package com.kocati.form.app.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.Cascade;
 
-import javax.annotation.Generated;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
