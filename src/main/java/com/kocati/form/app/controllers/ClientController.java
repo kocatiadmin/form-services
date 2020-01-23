@@ -24,7 +24,6 @@ public class ClientController {
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public void create(@RequestBody @DateTimeFormat(pattern="yyyy-MM-dd") Client client){
-
         clientRepo.save(client);
     }
 
