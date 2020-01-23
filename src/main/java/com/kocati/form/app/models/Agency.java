@@ -13,7 +13,7 @@ public class Agency {
     private String agencyName;
 
     @OneToMany(cascade = CascadeType.MERGE )
-    @JoinColumn(name = "client_id")
+    @JoinColumn(name = "agency_id")
     private List<Client> clientList;
 
     public Long getId() {

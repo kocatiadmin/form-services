@@ -32,6 +32,9 @@ public class Client {
     @JoinColumn(name = "client_id")
     private List<Policy> policyList;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Agency agency;
+
     public Long getId() {
         return id;
     }
