@@ -1,8 +1,30 @@
 package com.kocati.form.app.models.enums;
 
 public enum PolicyType {
-    MEDICAL, SELF_FUNDED, DENTAL, VISION, BASIC_LIFE_AND_AD, SHORT_TERM_DISABILITY, LONG_TERM_DISABILITY,
-    LONG_TERM_CARE, CORBA, HSA_AND_HRA, FLEX_125_AND_FSA, VISITORS,
-    COMMERCIAL_LIABILITY, WORKERS_COMPENSATION, UMBRELLA, AUTOMOBILE_LIABILITY, E_AND_O_PROFESSION_LIABILITY,
-    FIDELITY_CRIME_BOND, PERSONAL_AUTO_AND_HOME
+	
+	HEALTH ("HE"),
+	DENTAL ("DE"),
+	VISION ("VI"),
+	LIFE_ADD ("LA"),
+	STD ("ST"),
+	LTD ("LT"),
+	OTHER ("OT"),
+	MEDICARE ("ME"),
+	CGL_BOP ("CB"),
+	WORKER_COMPENSATION ("WC"),
+	UMBRELLA ("UM"),
+	OMMISSIONS ("OM"),
+	CRIME_BOND ("CR"),
+	COMMERCIAL_AUTO ("CA");
+
+	private final String policyCode;
+	
+	PolicyType(String policy) {
+		this.policyCode = policy;
+	}
+	
+	public String getPolicyCode() {
+		return this.policyCode;
+	}
+
 }

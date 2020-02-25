@@ -1,156 +1,123 @@
 package com.kocati.form.app.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import javax.persistence.*;
-import java.util.Date;
+import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitialize","handler"})
-public class Client {
+public class Client implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "clientId")
     private Long id;
-
-    private Date renewalDate;
-    private String clientName;
-    private String contactPerson;
-    private String primaryEmail;
-    private String secondaryEmail;
-    private String phone1;
-    private String cellPhone;
-    private String currentCarrier;
-    private String referredBy;
-    private String notes;
-
-    @Transient
-    private boolean isProspect;
+    
+    private String name;    
+    private String taxId;    
+    private String phoneNo;    
+    private String emailId;    
+    private String website;    
+    private String address;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "client_id")
-    private List<Policy> policyList;
+    @JoinColumn(name = "clientId")
+    private List<ClientContactDetails> contactDetailsList;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Agency agency;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "clientId")
+    private List<Employee> employeeList;
+    
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "clientId")
+    private List<ClientPolicyBucket> policyBuckets;
 
-    public Long getId() {
-        return id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public Date getRenewalDate() {
-        return renewalDate;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setRenewalDate(Date renewalDate) {
-        this.renewalDate = renewalDate;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public String getClientName() {
-        return clientName;
-    }
+	public String getTaxId() {
+		return taxId;
+	}
 
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
-    }
+	public void setTaxId(String taxId) {
+		this.taxId = taxId;
+	}
 
-    public String getContactPerson() {
-        return contactPerson;
-    }
+	public String getPhoneNo() {
+		return phoneNo;
+	}
 
-    public void setContactPerson(String contactPerson) {
-        this.contactPerson = contactPerson;
-    }
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
+	}
 
-    public String getPrimaryEmail() {
-        return primaryEmail;
-    }
+	public String getEmailId() {
+		return emailId;
+	}
 
-    public void setPrimaryEmail(String primaryEmail) {
-        this.primaryEmail = primaryEmail;
-    }
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
 
-    public String getSecondaryEmail() {
-        return secondaryEmail;
-    }
+	public String getWebsite() {
+		return website;
+	}
 
-    public void setSecondaryEmail(String secondaryEmail) {
-        this.secondaryEmail = secondaryEmail;
-    }
+	public void setWebsite(String website) {
+		this.website = website;
+	}
 
-    public String getPhone1() {
-        return phone1;
-    }
+	public String getAddress() {
+		return address;
+	}
 
-    public void setPhone1(String phone1) {
-        this.phone1 = phone1;
-    }
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
-    public String getCellPhone() {
-        return cellPhone;
-    }
+	public List<ClientContactDetails> getContactDetailsList() {
+		return contactDetailsList;
+	}
 
-    public void setCellPhone(String cellPhone) {
-        this.cellPhone = cellPhone;
-    }
+	public void setContactDetailsList(List<ClientContactDetails> contactDetailsList) {
+		this.contactDetailsList = contactDetailsList;
+	}
 
-    public String getCurrentCarrier() {
-        return currentCarrier;
-    }
+	public List<Employee> getEmployeeList() {
+		return employeeList;
+	}
 
-    public void setCurrentCarrier(String currentCarrier) {
-        this.currentCarrier = currentCarrier;
-    }
+	public void setEmployeeList(List<Employee> employeeList) {
+		this.employeeList = employeeList;
+	}
 
+	public List<ClientPolicyBucket> getPolicyBuckets() {
+		return policyBuckets;
+	}
 
-    public String getReferredBy() {
-        return referredBy;
-    }
-
-    public void setReferredBy(String referredBy) {
-        this.referredBy = referredBy;
-    }
-
-    public String getNotes() {
-        return notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-
-    public List<Policy> getPolicyList() {
-        return policyList;
-    }
-
-    public void addPolicy(Policy policy){
-        getPolicyList().add(policy);
-    }
-
-    public void removePolicy(Policy policy){
-        getPolicyList().remove(policy);
-    }
-
-    public boolean isProspect() {
-        return isProspect;
-    }
-
-    public void setProspect(boolean prospect) {
-        isProspect = prospect;
-    }
-
-
-
-
+	public void setPolicyBuckets(List<ClientPolicyBucket> policyBuckets) {
+		this.policyBuckets = policyBuckets;
+	}
 }
-    /*Renewal Date
-    Client Name, Contact Person, Email 1, Email 2, Phone 1, Mobile 2
-    Current Carrier, Coverage – Medical, Dental, Vision, Life, STD, LTD, Other
-    Coverage Effective Date - Medical, Dental, Vision, Life, STD, LTD, Other
-    Referred By, Coverage Cancelled, Notes
-    */
