@@ -5,15 +5,11 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import com.kocati.form.app.models.enums.PolicyType;
 
 @Entity
 public class PolicyBucket implements Serializable {
@@ -25,8 +21,8 @@ public class PolicyBucket implements Serializable {
     @Column(name = "bucketId")
 	private Long id;
 	
-	@Enumerated(EnumType.STRING)
-	private PolicyType policyType;
+	private String name;
+	private String policyType;
 	
 	private String carrier;
 	private String network;
@@ -35,7 +31,7 @@ public class PolicyBucket implements Serializable {
 	private Date effectiveDate;
 	
 	@Temporal(TemporalType.DATE)
-	private Date terminationDate;
+	private Date terminationDate; 
 
 	private double premium;
 	private double commissions;
@@ -54,10 +50,16 @@ public class PolicyBucket implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public PolicyType getPolicyType() {
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPolicyType() {
 		return policyType;
 	}
-	public void setPolicyType(PolicyType policyType) {
+	public void setPolicyType(String policyType) {
 		this.policyType = policyType;
 	}
 	public String getCarrier() {
