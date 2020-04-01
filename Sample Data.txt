@@ -1,0 +1,8 @@
+INSERT INTO AGENCY VALUES(1, 'Agency 1');
+
+INSERT INTO POLICY_BUCKET VALUES (1, 30000, 'XYZ', 10, SYSDATE, 55000, null, null, 'Y', 'Policy 1', null, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit', 'HE', 350, 30000, 35000, DATEADD(MONTH, 6, SYSDATE), 1);
+INSERT INTO POLICY_BUCKET VALUES (2, 30000, 'XYZ', 10, SYSDATE, 55000, null, null, 'Y', 'Policy 2', null, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit', 'DE', 350, 30000, 35000, DATEADD(MONTH, 6, SYSDATE), 1);
+INSERT INTO POLICY_BUCKET VALUES (3, 30000, 'XYZ', 10, SYSDATE, 55000, null, null, 'Y', 'Policy 3', null, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit', 'VI', 350, 30000, 35000, DATEADD(MONTH, 6, SYSDATE), 1);
+INSERT INTO POLICY_BUCKET VALUES (4, 30000, 'XYZ', 10, SYSDATE, 55000, null, null, 'Y', 'Policy 4', null, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit', 'LA', 350, 30000, 35000, DATEADD(MONTH, 6, SYSDATE), 1);
+INSERT INTO POLICY_BUCKET VALUES (5, 30000, 'XYZ', 10, SYSDATE, 55000, null, null, 'Y', 'Policy 5', null, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit', 'ST', 350, 30000, 35000, DATEADD(MONTH, 6, SYSDATE), 1);
+INSERT INTO POLICY_BUCKET VALUES (6, 30000, 'XYZ', 10, SYSDATE, 55000, null, null, 'Y', 'Policy 6', null, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit', 'LT', 350, 30000, 35000, DATEADD(MONTH, 6, SYSDATE), 1);
